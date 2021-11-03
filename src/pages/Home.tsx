@@ -28,7 +28,7 @@ export default function Home() {
                 <div className='content'>
                     <div className='sub-content' >
                         <h1>IOTABOTS</h1>
-                        <p>First PFP NFTs on IOTA </p>
+                        <p>First PFP NFTs on IOTA</p>
                         <button
                             className="btn btn-outline-dark"
                             onClick={scrollToBottom}>
