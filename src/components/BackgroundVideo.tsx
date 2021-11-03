@@ -1,6 +1,4 @@
 
-import React from 'react';
-
 const BackgroundVideo = ({ videoSource, children, blur }: {videoSource:any, children:any, blur:any}) => {
     return (
         <>
