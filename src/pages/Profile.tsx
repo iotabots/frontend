@@ -1,4 +1,3 @@
-import React from "react";
 import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
@@ -19,9 +18,6 @@ import Box from '@mui/material/Box';
 import axios from 'axios'
 
 import { useState, useEffect } from 'react';
-import { setOriginalNode } from "typescript";
-
-const ISCP_TESTNET_NETWORK_ID = '1074';
 
 const iotabotsContractAddress = "0x2f6EFb05Dd92Af605184199296979979379Ecbd3";
 
