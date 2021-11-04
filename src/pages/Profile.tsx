@@ -29,6 +29,7 @@ export default function Profile() {
         if (active) {
             loadBots()
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [active])
 
     interface Bot {
@@ -63,7 +64,7 @@ export default function Profile() {
     }
 
     async function loadBots() {
-        await connect();
+        // await connect();
         console.log("library", library)
         console.log("connector", connector)
         const provider = new ethers.providers.Web3Provider(library.currentProvider)
