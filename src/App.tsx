@@ -6,8 +6,17 @@ import Footer from './components/Footer'
 
 import Home from './pages/Home'
 import Bots from './pages/Bots'
+import Profile from './pages/Profile'
 
 import './App.css';
+
+import { Web3ReactProvider } from '@web3-react/core'
+import Web3 from 'web3'
+
+function getLibrary(provider: any) {
+  return new Web3(provider)
+}
+
 
 export default function App() {
 
@@ -16,30 +25,33 @@ export default function App() {
       fontFamily: 'coder',
     },
     palette: {
-    primary: {
-      light: '#757ce8',
-      main: '#2b2b2b',
-      dark: '#002884',
-      contrastText: '#fff',
+      primary: {
+        light: '#757ce8',
+        main: '#2b2b2b',
+        dark: '#002884',
+        contrastText: '#fff',
+      },
+      secondary: {
+        light: '#ff7961',
+        main: '#f44336',
+        dark: '#ba000d',
+        contrastText: '#000',
+      },
     },
-    secondary: {
-      light: '#ff7961',
-      main: '#f44336',
-      dark: '#ba000d',
-      contrastText: '#000',
-    },
-  },
   });
 
   return (
-    <ThemeProvider theme={theme}>
-      <Navigation />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="bots" element={<Bots />} />
-      </Routes>
-      <Footer />
-    </ThemeProvider>
+    <Web3ReactProvider getLibrary={getLibrary}>
+      <ThemeProvider theme={theme}>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="bots" element={<Bots />} />
+          <Route path="profile" element={<Profile />} />
+        </Routes>
+        <Footer />
+      </ThemeProvider>
+    </Web3ReactProvider>
   );
 }
 

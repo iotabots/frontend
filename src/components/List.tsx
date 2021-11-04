@@ -8,9 +8,10 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 
 class List extends React.Component {
-    componentDidUpdate() {
+
+    componentDidMount() {
         window.scrollTo(0, 0);
-      }
+    }
     
     state = {
         items: Array.from({ length: 20 }, (v, k) => k + 1)
@@ -25,7 +26,7 @@ class List extends React.Component {
         return (
             <>
                 <InfiniteScroll
-                    style={{ display: 'flex', flexDirection: 'row',  flexWrap: "wrap", width: '100%', textAlign: 'center', justifyContent: 'center'}} 
+                    style={{ display: 'flex', flexDirection: 'row', flexWrap: "wrap", width: '100%', textAlign: 'center', justifyContent: 'center' }}
                     dataLength={this.state.items.length}
                     next={this.fetchMoreData}
                     hasMore={this.state.items.length >= 500 ? false : true}
@@ -34,7 +35,7 @@ class List extends React.Component {
                     {this.state.items.map((item, index) => (
                         <Grid item key={index} xs={12} sm={6} md={4}>
                             <Card
-                                // sx={{ width: '100%', display: 'flex', flexDirection: 'column' }}
+                            // sx={{ width: '100%', display: 'flex', flexDirection: 'column' }}
                             >
                                 <CardMedia
                                     height="100%"

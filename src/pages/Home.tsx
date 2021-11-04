@@ -13,7 +13,7 @@ import BackgroundVideo from '../components/BackgroundVideo'
 
 export default function Home() {
 
-    const cards = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const cards = [0, 1, 2, 3, 4, 5];
 
     const scrollToBottom = () => {
         const bottomEle = document.getElementById("what");
@@ -107,7 +107,7 @@ export default function Home() {
                                         alt="IOTABOT"
                                     />
                                     <CardContent sx={{ flexGrow: 1 }}>
-                                        <Typography gutterBottom variant="h5" component="h2">
+                                        <Typography gutterBottom variant="h6" component="h3">
                                             {`IOTABOT #${index + 1}`}
                                         </Typography>
 
@@ -119,9 +119,9 @@ export default function Home() {
 
                 </Container>
                 <Container sx={{ py: 8 }} maxWidth="md"  >
-                    <Typography align="center" gutterBottom variant="h5" component="h2">
+                    <Typography align="center" gutterBottom variant="button" component="h1">
                         <NavLink to="/bots">
-                            Discover all Bots
+                            Discover all 500 IOTABOTS
                         </NavLink>
                     </Typography>
                 </Container>

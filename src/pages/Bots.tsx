@@ -5,7 +5,7 @@ import Container from '@mui/material/Container';
 import List from "../components/List"
 
 export default function Bots() {
-
+    
     return (
         <>
             <CssBaseline />
@@ -19,7 +19,7 @@ export default function Bots() {
                         color="#fff"
                         gutterBottom
                     >
-                        All Bots
+                        All IOTABOTS
                     </Typography>
                     {/* End hero unit */}
                     <List />

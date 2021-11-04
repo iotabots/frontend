@@ -96,6 +96,17 @@ export default function PrimarySearchAppBar() {
                     Bots
                 </NavLink>
             </MenuItem>
+            <MenuItem>
+                <NavLink
+                    style={({ isActive }) => {
+                        return {
+                            color: isActive ? "#02c692" : ""
+                        };
+                    }}
+                    to="/profile">
+                    Profile
+                </NavLink>
+            </MenuItem>
             <MenuItem
 
             >
@@ -153,6 +164,20 @@ export default function PrimarySearchAppBar() {
                             }}
                             className="nav-link" to="/bots">
                             Bots
+                        </NavLink>
+                    </Box>
+                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                        |
+                    </Box>
+                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                        <NavLink
+                            style={({ isActive }) => {
+                                return {
+                                    color: isActive ? "#02c692" : ""
+                                };
+                            }}
+                            className="nav-link" to="/profile">
+                            Profile
                         </NavLink>
                     </Box>
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
