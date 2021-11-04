@@ -2,7 +2,7 @@
   "name": "iotabots-frontend",
   "version": "0.0.1",
   "private": false,
-  "homepage": "https://iotabots.github.io/frontend",
+  "homepage": "https://new-website.iotabots.io",
   "dependencies": {
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
