@@ -8,7 +8,10 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 
 class List extends React.Component {
-
+    componentDidUpdate() {
+        window.scrollTo(0, 0);
+      }
+    
     state = {
         items: Array.from({ length: 20 }, (v, k) => k + 1)
     };
@@ -25,7 +28,7 @@ class List extends React.Component {
                     style={{ display: 'flex', flexDirection: 'row',  flexWrap: "wrap", width: '100%', textAlign: 'center', justifyContent: 'center'}} 
                     dataLength={this.state.items.length}
                     next={this.fetchMoreData}
-                    hasMore={true}
+                    hasMore={this.state.items.length >= 500 ? false : true}
                     loader={<h4>Loading...</h4>}
                 >
                     {this.state.items.map((item, index) => (
