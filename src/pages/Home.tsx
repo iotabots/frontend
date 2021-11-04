@@ -24,7 +24,7 @@ export default function Home() {
             <CssBaseline />
             <BackgroundVideo
                 blur={0}
-                videoSource="/assets/TEASER.mp4" >
+                videoSource="assets/TEASER.mp4" >
                 <div className='content'>
                     <div className='sub-content' >
                         <h1>IOTABOTS</h1>
