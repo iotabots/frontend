@@ -23,9 +23,7 @@ export default function Bots() {
                         All Bots
                     </Typography>
                     {/* End hero unit */}
-                    <Grid container spacing={4}>
-                        <List />
-                    </Grid>
+                    <List />
 
                 </Container>
             </main>

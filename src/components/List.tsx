@@ -22,27 +22,25 @@ class List extends React.Component {
         return (
             <>
                 <InfiniteScroll
+                    style={{ display: 'flex', flexDirection: 'row',  flexWrap: "wrap", width: '100%', textAlign: 'center', justifyContent: 'center'}} 
                     dataLength={this.state.items.length}
                     next={this.fetchMoreData}
                     hasMore={true}
                     loader={<h4>Loading...</h4>}
                 >
-                    {this.state.items.map((card, index) => (
+                    {this.state.items.map((item, index) => (
                         <Grid item key={index} xs={12} sm={6} md={4}>
                             <Card
-                                sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+                                // sx={{ width: '100%', display: 'flex', flexDirection: 'column' }}
                             >
                                 <CardMedia
+                                    height="100%"
                                     component="img"
-                                    sx={{
-                                        // 16:9
-                                        // pt: '56.25%',
-                                    }}
                                     image={`http://assets.iotabots.io/${index + 1}.png`}
                                     alt="IOTABOT"
                                 />
                                 <CardContent sx={{ flexGrow: 1 }}>
-                                    <Typography gutterBottom variant="h5" component="h2">
+                                    <Typography gutterBottom variant="h6" component="h3">
                                         {`IOTABOT #${index + 1}`}
                                     </Typography>
 
