@@ -19,7 +19,7 @@ import axios from 'axios'
 
 import { useState, useEffect } from 'react';
 
-const iotabotsContractAddress = "0x6c2D60145cDD0396bd03298693495bf98fcdD93E";
+const iotabotsContractAddress = "0x866fe4fcA79A98825eE0eB566C62c1f11B9aB461";
 
 export default function Profile() {
 
