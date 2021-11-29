@@ -19,7 +19,8 @@ import axios from 'axios'
 
 import { useState, useEffect } from 'react';
 
-const iotabotsContractAddress = "0x8b76D80C30715D1c772B760D69c76C8f2EAF50eA";
+const iotabotsContractAddress = "0x4da36b053023D470F13753C8cF1dF61b44f2EFEE";
+const iotabots2ContractAddress = "0xF1960052d7f8Ad70412C2d6F7D23A9327e0665b1";
 
 export default function Profile() {
 
@@ -27,10 +28,30 @@ export default function Profile() {
 
     useEffect(() => {
         if (active) {
-            loadBots()
+            init()
+
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [active])
+
+    async function init() {
+
+            // Load first bots 
+            let items = await loadBots(iotabotsContractAddress)
+            console.log("ITEMS", items)
+
+            
+            console.log("BOTS", bots)
+            
+            // Load second bots
+            let items2 = await loadBots(iotabots2ContractAddress)
+            console.log("ITEMS", items)
+            
+            setBots(items.concat(items2))
+            console.log("BOTS2", bots)
+
+
+    }
 
     interface Bot {
         attributes: Array<object>;
@@ -63,14 +84,14 @@ export default function Profile() {
         }
     }
 
-    async function loadBots() {
+    async function loadBots(address: string) {
         // await connect();
         console.log("library", library)
         console.log("connector", connector)
         const provider = new ethers.providers.Web3Provider(library.currentProvider)
         console.log("provider", provider)
         let contract = new ethers.Contract(
-            iotabotsContractAddress,
+            address,
             IOTABOTS_ABI,
             provider
         )
@@ -95,8 +116,9 @@ export default function Profile() {
         }))
 
         console.log("items:", items)
-        setBots(items)
         console.log("bots:", bots)
+        console.log("bots:", bots)
+        return items
         // const tokenContract = new ethers.Contract(iotabotsContractAddress, IOTABOTS_ABI, provider)
         // console.log("tokenContract:", tokenContract)
     }
@@ -134,7 +156,7 @@ export default function Profile() {
             >
                 Your IOTABOTS:</Typography>
             <Container maxWidth="sm">
-                <Box sx={{ textAlign: 'center'}} >
+                <Box sx={{ textAlign: 'center' }} >
 
                     {bots.map((bot, index) => (
                         <Grid item key={index} xs={12} sm={12} md={12}>
